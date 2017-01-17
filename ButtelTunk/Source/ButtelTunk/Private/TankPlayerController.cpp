@@ -17,8 +17,6 @@ void ATankPlayerController::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("Got A Tank: %s"), *ControlledTank->GetName());
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("PLAYER CONTROLLER BEING PLAY!"));
-
 }
 
 
