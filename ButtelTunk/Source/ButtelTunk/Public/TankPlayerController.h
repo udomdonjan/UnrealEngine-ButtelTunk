@@ -14,7 +14,7 @@ class BUTTELTUNK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
-public:
+private:
 	virtual void BeginPlay() override;
 	virtual void Tick( float DeltaTime ) override;
 	ATank* GetControlledTank() const;
@@ -25,5 +25,11 @@ public:
 
 	// return an out parameter, true if hit landscape
 	bool GetSightRayHitLocation(FVector& HitLocation) const; 
+
+	UPROPERTY(EditAnywhere)
+	float CrosshairXLocation = 0.5f;
+
+	UPROPERTY(EditAnywhere)
+	float CrosshairYLocation = 0.33333f;
 	
 };
