@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "ButtelTunk.h"
+#include "TankBarrel.h"
 #include "TankAimingComponent.h"
 
 
@@ -14,7 +15,7 @@ UTankAimingComponent::UTankAimingComponent()
 	// ...
 }
 
-void UTankAimingComponent::SetBarrelReferance(UStaticMeshComponent* BarrelToSet)
+void UTankAimingComponent::SetBarrelReferance(UTankBarrel* BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }
@@ -51,10 +52,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
-	UE_LOG(LogTemp, Warning, TEXT("Aim as rotator: %s"), *AimAsRotator.ToString());
 
-	// then move the barrel right amount this frame
-
-
-	//given max elevation speed, at this frame
+	Barrel->Elevate(5); //TODO remove hard code
+	
 }
