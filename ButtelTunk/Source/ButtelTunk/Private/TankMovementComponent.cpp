@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright C
 
 #include "ButtelTunk.h"
 #include "TankTrack.h"
@@ -32,7 +32,6 @@ void UTankMovementComponent::IntendMoveForward(float Throw)
 {
 
 	if (!LeftTrack || !RightTrack) { return; }
-	//TODO Prevent double speed due to dual control use.
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(Throw);
 
